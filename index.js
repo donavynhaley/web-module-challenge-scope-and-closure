@@ -24,7 +24,7 @@ function processFirstItem(stringList, callback) {
 ///// M V P ///////
 
 /* Task 1: `counterMaker`
- * Study the code for counter1 and counter2. Answer the questions below.
+ * Study the code for counter1 and counter2. Answer the questions below
  * 
  * 1. What is the difference between counter1 and counter2?
  * Counter 1 contains a nested function and counter 2 dosen't but both have the count variable outside the function that adds to it.
