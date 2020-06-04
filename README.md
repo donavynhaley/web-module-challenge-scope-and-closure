@@ -47,7 +47,7 @@ Edit the `ReadMe` file with your answers.
 ```js
 function personalDice(name){
   return function(){
-      // generate random number between 1 and 6
+      // generate random number between 1 and 6 ********** THIS RETURNS 0-5 NOT 1-6
     const newRoll = Math.floor(Math.random() * 6);
     console.log(`${name} rolled a ${newRoll}`)
   }
@@ -63,9 +63,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+Closure is used as another funtion is enclosed in the first. Also the 2nd function calls for the name parameter that is passed in the first. 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+Not sure if there is more to this question that I am missing. Calling dansRoll twice the string before the number stays the same while the number changes.
 c. What is the lexical scope of `newRoll`? 
-
+It cannot be accessed inside personalDice because it  was  declared after. It can be accessed by  any further nested functions though
 ### Task 3 - Stretch Goals
 
 After you have completed the requirements, **create** a new file called `stretch.js` and practice more with closures. There are no tests for these problems.

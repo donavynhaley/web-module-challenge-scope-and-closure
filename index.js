@@ -24,14 +24,14 @@ function processFirstItem(stringList, callback) {
 ///// M V P ///////
 
 /* Task 1: `counterMaker`
- * Study the code for counter1 and counter2. Answer the questions below.
+ * Study the code for counter1 and counter2. Answer the questions below
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Counter 1 contains a nested function and counter 2 dosen't but both have the count variable outside the function that adds to it.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * CounterMaker is is useing closure because the count variable is inside the function and cannot be refrenced outside of it.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * If you did not want the count variable to be global thhan counter 1 would be preferable. Counter 2 would be better if you needed to refrence that variable globally(As in later in the code)
 */
 
 // counter1 code
@@ -57,10 +57,10 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+  let pointsScored = Math.floor(Math.random() * 3);
+  return pointsScored;
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +76,18 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(innings, numOfInnings){
+  let score = {
+    'Home': 0,
+    'Away': 0,
+  };
+  for(i=0; i < numOfInnings; i++){
+    score["Home"] += innings();
+    score["Away"] += innings();
+  }
+  return score;
 }
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -103,8 +110,17 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(randomNumber, numberOfInnings) {
+  let score = {
+    'Home': 0,
+    'Away': 0,
+  };
+  for(i=0; i < numberOfInnings; i++){
+    score["Home"] += randomNumber();
+    score["Away"] += randomNumber();
+    console.log(`${i+1} inning: ${score["Home"]} - ${score["Away"]}`)
+  }
+  console.log(`Final Score: ${score["Home"]} - ${score["Away"]}`)
+
 }
-
-
+scoreboard(inning, 9);
